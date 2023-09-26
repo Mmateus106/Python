@@ -7,7 +7,7 @@ def somarNumeros(lista):
     soma = 0
     for i in lista:
         soma+=i
-        return soma
+    return soma
     
 #programa pricipal
 lista = [1, 3, 5, 7, 9]
