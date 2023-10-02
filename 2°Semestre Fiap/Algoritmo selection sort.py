@@ -16,10 +16,10 @@ def selection_sort(seq):
 #Programa principal
 lista = []
 o = 0
-while o < 100000000: 
-    lista.append(random.randint(0,100)) 
+while o <= 100: 
+    lista.append(random.randint(0, 100)) 
     o += 1
-print(f"Lista original: {lista}")
-selection_sort(lista)
-print(f"Lista ordenada: {lista}")
+    print(f"Lista original: {lista}")
+    selection_sort(lista)
+    print(f"Lista ordenada: {lista}")
                        
