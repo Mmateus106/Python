@@ -7,4 +7,4 @@ def medir_tempo(limite):
         fim = time.time()
     print(f'Tempo: {fim-inicio}')
 
-medir_tempo(10001)
+medir_tempo(100000000)
