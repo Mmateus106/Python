@@ -13,9 +13,9 @@ def selection_sort(seq):
     for i in range(len(seq)):
         min_index = i
         for j in range(i+1, len(seq)):
-            #seleciona o menor elemento em cada iteração
+            
             if seq[j] < seq[min_index]:
-                #troca os elementos - atribuição paralela
+                
                 seq[j], seq[min_index] = seq[min_index], seq[j]
 
 def insertion_sort(lista):
@@ -48,36 +48,38 @@ def merge_sort(lista):
                 lista[k] = direita[j]
                 j+=1
             k+=1
-        #i - controle da lista esquerda 
-        #j - controle da lista direita
-        #k - controle da lista anterior à recursão
-        #Verificação dos elementos da lista esquerda
+
         while(i<len(esquerda)):
             lista[k] = esquerda[i]
             i+=1
             k+=1
 
-        #Verificação dos elementos da lista direita
         while(j<len(direita)):
             lista[k] = direita[j]
             j+=1
             k+=1
 
+def get_time(arg):    
+    inicio = time.time()    
+    time.sleep(arg) # <- Chamar a função de ordenação aq
+    fim = time.time()
+    return fim-inicio
+
 # Função para o menu principal
 def menuPrincipal():
-    print("*-- Teste de ordenação --*!")
+    print("*-- Teste de ordenação de listas --*!")
     print("Escolha uma opção:")
-    print("--------------------------------")
+    print("---------------------------")
     print("1. Bubble Sort")
-    print("--------------------------------")
+    print("---------------------------")
     print("2. Selection Sort")
-    print("--------------------------------")
+    print("---------------------------")
     print("3. Insertion Sort")
-    print("--------------------------------")
+    print("---------------------------")
     print("4. Merge Sort")
-    print("--------------------------------")
+    print("---------------------------")
     print("5. Sair do programa")
-    print("--------------------------------")
+    print("---------------------------")
 
     ordenar = input("Digite o número da opção de ordenação desejada: ")
 
