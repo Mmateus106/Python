@@ -1,6 +1,7 @@
 import random
 import time
 import json
+import CriandoListas
 
 def bubble_sort(lista):
     n = len(lista)
@@ -111,4 +112,5 @@ def menuPrincipal():
             break
 
 menuPrincipal()
+
 
