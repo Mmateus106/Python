@@ -1,6 +1,6 @@
 import random
 import time
-
+import json
 
 def bubble_sort(lista):
     n = len(lista)
@@ -9,14 +9,14 @@ def bubble_sort(lista):
             if lista[j] > lista[j+1]:
                 lista[j], lista[j+1] = lista[j+1], lista[j]
 
-def selection_sort(seq):
+def selection_sort(lista):
     for i in range(len(seq)):
         min_index = i
-        for j in range(i+1, len(seq)):
+        for j in range(i+1, len(lista)):
             
-            if seq[j] < seq[min_index]:
+            if lista[j] < lista[min_index]:
                 
-                seq[j], seq[min_index] = seq[min_index], seq[j]
+                lista[j], lista[min_index] = lista[min_index], lista[j]
 
 def insertion_sort(lista):
     for i in range (1, len(lista)):
@@ -59,42 +59,55 @@ def merge_sort(lista):
             j+=1
             k+=1
 
-def get_time(arg):    
+def get_time(ordenar):    
     inicio = time.time()    
-    time.sleep(arg) # <- Chamar a função de ordenação aq
+    time.sleep(ordenar) # <- Chamar a função de ordenação aq
     fim = time.time()
     return fim-inicio
 
-# Função para o menu principal
-def menuPrincipal():
-    print("*-- Teste de ordenação de listas --*!")
-    print("Escolha uma opção:")
-    print("---------------------------")
-    print("1. Bubble Sort")
-    print("---------------------------")
-    print("2. Selection Sort")
-    print("---------------------------")
-    print("3. Insertion Sort")
-    print("---------------------------")
-    print("4. Merge Sort")
-    print("---------------------------")
-    print("5. Sair do programa")
-    print("---------------------------")
+def medir_tempo(limite):
+    inicio = time.time()
+    for i in range(limite):
+        print(f'i: {i}')
+        fim = time.time()
+    print(f"Tempo: {fim-inicio}")
 
-    ordenar = input("Digite o número da opção de ordenação desejada: ")
-
-    if ordenar == "1":
-        bubble_sort()
-    elif ordenar == "2":
-        selection_sort()
-    elif ordenar == "3":
-        insertion_sort()
-    elif ordenar == "4":
-        merge_sort()
-    elif ordenar =="5":
-        exit()
+def testar_metodo_ordenacao(metodo, lista):
+    if metodo == 1:
+        print("Usando Bubble Sort")
+        bubble_sort(lista)
+    elif metodo == 2:
+        print("Usando Selection Sort")
+        selection_sort(lista)
+    elif metodo == 3:
+        print("Usando Insertion Sort")
+        insertion_sort(lista)
+    elif metodo == 4:
+        print("Usando Merge Sort")
+        merge_sort(lista)
     else:
         print("Opção inválida. Tente novamente.")
-        menuPrincipal()
 
-#Programa Principal
+def menuPrincipal():
+    while True:
+        print("*-- Teste de ordenação de listas --*!")
+        print("Escolha uma opção:")
+        print("---------------------------")
+        print("1. Bubble Sort")
+        print("---------------------------")
+        print("2. Selection Sort")
+        print("---------------------------")
+        print("3. Insertion Sort")
+        print("---------------------------")
+        print("4. Merge Sort")
+        print("---------------------------")
+        print("5. Sair do programa")
+        print("---------------------------")
+
+        ordenar = int(input("Digite o número da opção de ordenação desejada: "))
+
+        if ordenar == 5:
+            print("Saiu do programa")
+            break
+
+menuPrincipal()
