@@ -9,14 +9,14 @@ def bubble_sort(lista):
             if lista[j] > lista[j+1]:
                 lista[j], lista[j+1] = lista[j+1], lista[j]
 
-def selection_sort(lista):
+def selection_sort(seq):
     for i in range(len(seq)):
         min_index = i
-        for j in range(i+1, len(lista)):
+        for j in range(i+1, len(seq)):
             
-            if lista[j] < lista[min_index]:
+            if seq[j] < seq[min_index]:
                 
-                lista[j], lista[min_index] = lista[min_index], lista[j]
+                seq[j], seq[min_index] = seq[min_index], seq[j]
 
 def insertion_sort(lista):
     for i in range (1, len(lista)):
@@ -111,3 +111,4 @@ def menuPrincipal():
             break
 
 menuPrincipal()
+

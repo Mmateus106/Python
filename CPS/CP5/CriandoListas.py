@@ -2,7 +2,7 @@ import json
 import random
 
 def criar_lista_num(lenght):
-    return [random.randint(1, 1000) for _ in range(lenght)]
+    return [random.randint(1, 10000) for _ in range(lenght)]
 
 def salvar_json(nome_arquivo, lista):
     with open(nome_arquivo, 'w') as arquivo:
