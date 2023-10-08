@@ -60,31 +60,24 @@ def merge_sort(lista):
             j+=1
             k+=1
 
-def get_time(ordenar):    
+def get_time(ordenar, lista):    
     inicio = time.time()    
-    time.sleep(ordenar) # <- Chamar a função de ordenação aq
+    metodo_ordenacao(ordenar, lista) 
     fim = time.time()
-    return fim-inicio
+    return fim - inicio
 
-def medir_tempo(limite):
-    inicio = time.time()
-    for i in range(limite):
-        print(f'i: {i}')
-        fim = time.time()
-    print(f"Tempo: {fim-inicio}")
-
-def testar_metodo_ordenacao(metodo, lista):
+def metodo_ordenacao(metodo, lista):
     if metodo == 1:
-        print("Usando Bubble Sort")
+        print("Utilizando o Bubble Sort")
         bubble_sort(lista)
     elif metodo == 2:
-        print("Usando Selection Sort")
+        print("Utilizando Selection Sort")
         selection_sort(lista)
     elif metodo == 3:
-        print("Usando Insertion Sort")
+        print("Utilizando Insertion Sort")
         insertion_sort(lista)
     elif metodo == 4:
-        print("Usando Merge Sort")
+        print("Utilizando Merge Sort")
         merge_sort(lista)
     else:
         print("Opção inválida. Tente novamente.")
@@ -111,6 +104,35 @@ def menuPrincipal():
             print("Saiu do programa")
             break
 
+        tamanho = int(input("Digite o tamanho da lista que deseja ordenar: "))
+        nome_arquivo = f'./CPS/CP5/Listas/Lista_{tamanho}.json'
+
+        with open(nome_arquivo, 'r') as arquivo:
+            lista_desordenada = json.load(arquivo)
+
+        print(f"\nOrdenando lista de {tamanho} elementos. Vai dormir e deixa rodando...")
+        tempo = get_time(ordenar, lista_desordenada)
+        print(f"Tempo de execução: {tempo:.3f} segundos")
+        print(f"Algoritmo: {get_nome_algoritmo(ordenar)}")
+
+        # Mostra a lista ordenada
+        #print("Lista ordenada:")
+        #print(lista_desordenada)
+
+def get_nome_algoritmo(metodo):
+    if metodo == 1:
+        return "Bubble Sort"
+    elif metodo == 2:
+        return "Selection Sort"
+    elif metodo == 3:
+        return "Insertion Sort"
+    elif metodo == 4:
+        return "Merge Sort"
+    else:
+        return "Opção inválida"
+
+#Programa Principal
 menuPrincipal()
+print(orde)
 
 

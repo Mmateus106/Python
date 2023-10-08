@@ -10,7 +10,7 @@ def salvar_json(nome_arquivo, lista):
 
 def criar_e_salvar_json(lenght):
     lista = criar_lista_num(lenght)
-    nome_arquivo = f'Lista_{lenght}.json'
+    nome_arquivo = f'./CPS/CP5/Listas/Lista_{lenght}.json'
     salvar_json(nome_arquivo, lista)
     print(f'Arquivo {nome_arquivo} com lista desordenada gerada!')
 
