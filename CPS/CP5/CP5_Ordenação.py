@@ -103,7 +103,7 @@ def menuPrincipal():
         if ordenar == 5:
             print("Saiu do programa")
             break
-
+        print("Tamanhos disponiveis: 10000, 100000, 500000, 1000000, 5000000")
         tamanho = int(input("Digite o tamanho da lista que deseja ordenar: "))
         nome_arquivo = f'./CPS/CP5/Listas/Lista_{tamanho}.json'
 
@@ -133,6 +133,6 @@ def get_nome_algoritmo(metodo):
 
 #Programa Principal
 menuPrincipal()
-print(orde)
+
 
 
