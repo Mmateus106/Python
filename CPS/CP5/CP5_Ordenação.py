@@ -84,19 +84,19 @@ def metodo_ordenacao(metodo, lista):
 
 def menuPrincipal():
     while True:
-        print("*-- Teste de ordenação de listas --*!")
-        print("Escolha uma opção:")
-        print("---------------------------")
-        print("1. Bubble Sort")
-        print("---------------------------")
-        print("2. Selection Sort")
-        print("---------------------------")
-        print("3. Insertion Sort")
-        print("---------------------------")
-        print("4. Merge Sort")
-        print("---------------------------")
-        print("5. Sair do programa")
-        print("---------------------------")
+        print("*== Teste de ordenação de listas ==*")
+        print("Escolha um dos algoritmos abaixo")
+        print("===========================")
+        print("1. \033[32mBubble Sort\033[0m")
+        print("===========================")
+        print("2. \033[32mSelection Sort\033[0m")
+        print("===========================")
+        print("3. \033[32mInsertion Sort\033[0m")
+        print("===========================")
+        print("4. \033[32mMerge Sort\033[0m")
+        print("===========================")
+        print("5. \033[32mSair do programa\033[0m")
+        print("===========================")
 
         ordenar = int(input("Digite o número da opção de ordenação desejada: "))
 
@@ -110,10 +110,10 @@ def menuPrincipal():
         with open(nome_arquivo, 'r') as arquivo:
             lista_desordenada = json.load(arquivo)
 
-        print(f"\nOrdenando lista de {tamanho} elementos. Vai dormir e deixa rodando...")
+        print(f"\nOrdenando lista de \033[32m{tamanho}\033[0m elementos. Vai dormir e deixa rodando...")
         tempo = get_time(ordenar, lista_desordenada)
-        print(f"Tempo de execução: {tempo:.3f} segundos")
-        print(f"Algoritmo: {get_nome_algoritmo(ordenar)}")
+        print(f"Tempo de execução: \033[32m{tempo:.3f}\033[0m segundos")
+        print(f"Algoritmo: \033[32m{get_nome_algoritmo(ordenar)}\033[0m")
 
         # Mostra a lista ordenada
         #print("Lista ordenada:")
