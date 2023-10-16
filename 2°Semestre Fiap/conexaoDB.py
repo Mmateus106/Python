@@ -35,6 +35,14 @@ def update():
         conn.close()
     except Exception as e:
         print(f"Something went wrong - update {e}")
+
+def delete():
+    conn = getConnection()
+    cursor = conn.cursor()
+    sql_query = 'DELETE FROM CEO_DETAILS WHERE AGE=50'
+    cursor.execute(sql_query)
+    conn.commit()
+    conn.close()
 def close_connection(conn):
     try:
         conn.close()
