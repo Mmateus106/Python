@@ -1,3 +1,5 @@
+#Importando o driver que será utilizado para a conexão com o banco
+#É necessário realizar o download do "cx_Oracle"
 import cx_Oracle
 
 #obter/criar conexao
