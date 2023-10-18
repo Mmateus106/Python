@@ -68,16 +68,16 @@ def get_time(ordenar, lista):
 
 def metodo_ordenacao(metodo, lista):
     if metodo == 1:
-        print("Utilizando o Bubble Sort")
+        print("Utilizando Bubble Sort...")
         bubble_sort(lista)
     elif metodo == 2:
-        print("Utilizando Selection Sort")
+        print("Utilizando Selection Sort...")
         selection_sort(lista)
     elif metodo == 3:
-        print("Utilizando Insertion Sort")
+        print("Utilizando Insertion Sort...")
         insertion_sort(lista)
     elif metodo == 4:
-        print("Utilizando Merge Sort")
+        print("Utilizando Merge Sort...")
         merge_sort(lista)
     else:
         print("Opção inválida. Tente novamente.")
