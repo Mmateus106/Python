@@ -3,8 +3,8 @@ import cx_Oracle
 #obter/criar conexao
 def getConnection():
     try:
-        conn = cx_Oracle.connect(user="rm98524", password="100603", 
-        host="oracle.fiap.com.br/orcl", port="1521", service_name="orcl")
+        conn = cx_Oracle.connect(user="rm98524", password="100603", host="oracle.fiap.com.br/orcl", 
+                                 port="1521", service_name="orcl")
         print(f"Conexão: {conn.version}")
     except Exception as e:
         print("Erro ao obter uma conexão", e)
@@ -37,12 +37,19 @@ def update():
         print(f"Something went wrong - update {e}")
 
 def delete():
-    conn = getConnection()
-    cursor = conn.cursor()
-    sql_query = 'DELETE FROM CEO_DETAILS WHERE AGE=50'
-    cursor.execute(sql_query)
-    conn.commit()
-    conn.close()
+    try:
+        conn = conexao()
+        cursor = conn.cursor()
+        sql_query = "DELETE FROM ceo_details WHERE AGE = 50"
+        cursor.execute(sql_query)
+        conn.commit()
+        print("CEO removed!")
+    except Exception as e:
+        print(f'Something went wrong - delete: {e}')
+    finally:
+        conn.close()
+
+
 def close_connection(conn):
     try:
         conn.close()
@@ -54,5 +61,4 @@ def close_connection(conn):
 print(f"Obtendo dados do BD")
 conn = getConnection()
 select()
-
 conn.close()
